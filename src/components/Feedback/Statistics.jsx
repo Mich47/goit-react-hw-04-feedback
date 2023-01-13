@@ -3,9 +3,7 @@ import { Box } from 'components/Box';
 import { TextStyled } from './Feedback.styled';
 
 export const Statistics = ({
-  good,
-  neutral,
-  bad,
+  feedbacks: { good, neutral, bad },
   total,
   positivePercentage,
 }) => {
@@ -21,9 +19,11 @@ export const Statistics = ({
 };
 
 Statistics.propTypes = {
-  good: PropTypes.number.isRequired,
-  neutral: PropTypes.number.isRequired,
-  bad: PropTypes.number.isRequired,
+  feedbacks: PropTypes.shape({
+    good: PropTypes.number.isRequired,
+    neutral: PropTypes.number.isRequired,
+    bad: PropTypes.number.isRequired,
+  }),
   total: PropTypes.number.isRequired,
   positivePercentage: PropTypes.number.isRequired,
 };
