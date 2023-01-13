@@ -10,14 +10,11 @@ export const App = () => {
   const [bad, setBad] = useState(0);
 
   const feedbacks = { good, neutral, bad };
-
   const totalFeedbacks = Object.values(feedbacks).reduce(
     (total, item) => total + item,
     0
   );
-
   const feedbackKeyMap = Object.keys(feedbacks);
-
   const positivePercentage = Math.round((good / totalFeedbacks) * 100);
 
   const handleLeaveFeedback = event => {
